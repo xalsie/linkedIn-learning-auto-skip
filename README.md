@@ -19,7 +19,7 @@ Pour installer l'extension sur chrome il faut :
 ### Tampermonkey
 #### Automatique
 
-Le lien ci-dessous devrait vous emmener sur la page d'installation du script sur Tampermonkey : [tampermonkey_Llas.user.js](https://github.com/xalsie/linkedIn-learning-auto-skip/raw/master/tampermonkey_Llas.user.js)
+Le lien ci-dessous devrait vous emmener sur la page d'installation du script sur Tampermonkey : [tampermonkey_Llas.user.js](https://github.com/xalsie/linkedIn-learning-auto-skip/raw/main/tampermonkey_Llas.user.js)
 
 Si cette méthode ne fonctionne pas, je vous invite à utiliser la méthode manuelle.
 
@@ -30,7 +30,7 @@ Il est possible d'utiliser Tampermonkey pour charger ce script automatiquement, 
 Ensuite il vous suffit de cliquer sur l'icone de Tampermonkey puis de cliquer sur "Dashboard". Une fois dans le panneau d'administration de vos scripts, vous devez aller dans l'onglet "Utilities" et dans la partie "URL", entrez le lien suivant:
 
 ```
-https://github.com/xalsie/linkedIn-learning-auto-skip/raw/master/tampermonkey_Llas.user.js
+https://github.com/xalsie/linkedIn-learning-auto-skip/raw/main/script.Llas.js
 ```
 
 Puis cliquez sur "Import".
@@ -38,7 +38,7 @@ Puis cliquez sur "Import".
 ### Depuis la console javascript
 
 Allez sur la page d'une formation Linkedin learning.
-Copiez-collez le code du fichier [script.Llas.js](https://github.com/xalsie/linkedIn-learning-auto-skip/raw/master/tampermonkey_Llas.user.js) dans la console javascript de votre navigateur puis lancez le.
+Copiez-collez le code du fichier [script.Llas.js](https://github.com/xalsie/linkedIn-learning-auto-skip/raw/main/script.Llas.js) dans la console javascript de votre navigateur puis lancez le.
 
 ---
 
