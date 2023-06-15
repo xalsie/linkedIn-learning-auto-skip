@@ -1,0 +1,25 @@
+{
+    "name": "linkedIn-learning-auto-skip",
+    "version": "0.1",
+    "manifest_version": 3,
+    "homepage_url": "https://www.linkedin.com/learning/",
+    "description": "linkedIn learning video fix auto skip",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.linkedin.com/learning/*"
+            ],
+            "js": [
+                "src/main.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "assets/icon.png",
+        "48": "assets/icon.png",
+        "128": "assets/icon.png"
+    },
+    "permissions": [
+        "activeTab"
+    ]
+}
