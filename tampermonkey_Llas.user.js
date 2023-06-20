@@ -1,42 +1,43 @@
 // ==UserScript==
 // @name         linkedIn-learning-auto-skip
-// @namespace    https://github.com/xalsie/
-// @version      0.1
 // @description  linkedIn learning video fix auto skip
+// @version      0.2
 // @author       🐻｜LeGrizzly#0341
+// @namespace    https://github.com/xalsie/linkedIn-learning-auto-skip/
 // @match        https://*.linkedin.com/learning/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=linkedin.com
 // ==/UserScript==
 
 (function() {
-    var vjs = document.getElementById("vjs_video_3");
-    var elem = document.getElementsByClassName("vjs-control vjs-button vjs-next-button")[0];
+    var debug = false;
     var inSkip = false;
 
     setInterval(() => {
-        if (vjs == null) {
-            vjs = document.getElementById("vjs_video_3");
-        }
-        if (elem == null) {
-            elem = document.getElementsByClassName("vjs-control vjs-button vjs-next-button")[0];
-        }
-
-        if (vjs != null && elem != null) {
-            if (!inSkip && vjs.player.paused() === true) {
-                alert("video en pause !");
-                vjs.player.play();
+        if (getVjs() != null && getNextBtn() != null) {
+            if (!inSkip && getVjs().paused === true) {
+                log("DETECT video en pause", "- play");
+                getVjs().play();
             }
 
-            if (vjs.player.duration() == 0) {
-                console.log("video pas charge");
-            } else {
-                inSkip = false;
-                if (vjs.player.currentTime() > (vjs.player.duration()*0.97)) {
-                    // video suivante
-                    inSkip = true;
-                    elem.click();
-                }
+            inSkip = false;
+            if (getVjs().currentTime > (getVjs().duration*0.97)) {
+                log("DETECT video en pause", "- next");
+                inSkip = true;
+                getNextBtn().click();
+                setTimeout(() => {}, 1000);
             }
         }
-    }, 250)
+    }, 500)
+
+    function getVjs() {
+        return document.querySelectorAll("video")[0] ?? null;
+    }
+
+    function getNextBtn() {
+        return document.getElementsByClassName("vjs-control vjs-button vjs-next-button")[0] ?? null;
+    }
+
+    function log(error, message) {
+        if (debug) console.log(error, message);
+    }
 })();
